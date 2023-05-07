@@ -1,15 +1,15 @@
 import PropTypes from 'prop-types';
-import styles from './Section.module.css';
+import { SectionContainer, SectionTitle } from './Section.styled';
 
 const Section = ({ title, children }) => (
-  <div className={styles.container}>
-    <h2 className={styles.headerSecond}>{title}</h2>
+  <SectionContainer>
+    <SectionTitle>{title}</SectionTitle>
     {children}
-  </div>
+  </SectionContainer>
 );
 
 Section.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   children: PropTypes.node,
 };
 

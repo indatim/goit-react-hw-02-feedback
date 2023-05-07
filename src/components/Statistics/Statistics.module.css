@@ -1,8 +1,0 @@
-.item:not(:last-child) {
-  margin-bottom: 6px;
-}
-
-.paragraph {
-  display: block;
-  font-size: 20px;
-}
