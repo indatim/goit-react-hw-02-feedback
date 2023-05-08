@@ -4,7 +4,7 @@ import { Container } from './App.styled';
 
 import Section from 'components/Section/Section';
 import Statistics from 'components/Statistics/Statistics';
-import FeedbackOptions  from 'components/Feedback/FeedbackOptions';
+import FeedbackOptions from 'components/Feedback/FeedbackOptions';
 
 const options = ['good', 'bad', 'neutral'];
 
@@ -26,10 +26,9 @@ class App extends Component {
     return totalFeedback ? Math.round((good / totalFeedback) * 100) : 0;
   };
 
-  handleFeedback = ({ target }) => {
-    const { feedback } = target.dataset;
+  handleFeedback = target => {
     this.setState(prevState => {
-      return { [feedback]: prevState[feedback] + 1 };
+      return { [target]: prevState[target] + 1 };
     });
   };
 
@@ -40,13 +39,13 @@ class App extends Component {
 
     return (
       <Container>
-        <Section title={'Please leave feedback'}>
+        <Section title="Please leave feedback">
           <FeedbackOptions
             options={options}
             onLeaveFeedback={this.handleFeedback}
           />
         </Section>
-        <Section title={'Statistics'}>
+        <Section title="Statistics">
           <Statistics
             good={good}
             neutral={neutral}

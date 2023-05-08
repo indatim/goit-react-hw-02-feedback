@@ -9,7 +9,6 @@ export const StatisticsList = styled.ul`
 `;
 
 export const StatisticListItem = styled.li`
-  align-items: center;
   text-align: center;
   font-size: 20px;
 `;
